@@ -10,12 +10,17 @@ public class Platform : MonoBehaviour
     float duaration = 1;
     float timer = 0;
 
+    [SerializeField]
+    float Velocidad = 2;
+
     Rigidbody2D rb2DPlayer;
 
     enum Direction
     {
         RIGHT = 0,
-        LEFT
+        LEFT,
+        UP,
+        DOWN
     }
 
     [SerializeField]
@@ -35,7 +40,7 @@ public class Platform : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigidbody2D.MovePosition(rigidbody2D.position + moveDir * Time.deltaTime);
+        rigidbody2D.MovePosition(rigidbody2D.position + moveDir * Time.deltaTime * Velocidad);
         timer += Time.deltaTime;
         if (rb2DPlayer)
         {
@@ -44,7 +49,24 @@ public class Platform : MonoBehaviour
         if (timer >= duaration)
         {
             timer = 0;
-            direction = direction == Direction.RIGHT ? Direction.LEFT : Direction.RIGHT;
+
+            if(direction == Direction.RIGHT)
+            {
+                direction = Direction.LEFT;
+            } else if(direction == Direction.LEFT)
+            {
+                direction = Direction.RIGHT;
+            }
+
+            if(direction == Direction.UP)
+            {
+                direction = Direction.DOWN;
+            } else if(direction == Direction.DOWN)
+            {
+                direction = Direction.UP;
+            }
+
+           // direction = direction == Direction.RIGHT ? Direction.LEFT : Direction.RIGHT;
             CheckDir(ref moveDir);
             if (rb2DPlayer)
             {
@@ -62,6 +84,12 @@ public class Platform : MonoBehaviour
                 break;
             case Direction.LEFT:
                 moveDir = Vector2.left;
+                break;
+            case Direction.UP:
+                moveDir = Vector2.up;
+                break;
+            case Direction.DOWN:
+                moveDir = Vector2.down;
                 break;
         }
     }
