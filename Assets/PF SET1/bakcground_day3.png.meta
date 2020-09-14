@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/PixelPack03_Free/BKG01.png.meta
-guid: 1f2cc40d32bb48444bd64699a8b55efb
+<<<<<<< HEAD:Assets/unity-chan!/Unity-chan! Model/SplashScreen/Logo/Light_Silhouette.png.meta
+guid: e8577877616f72d4c88f9c879ea7a5ea
 =======
-guid: 4b1df07ea00859b4886266878d9fda27
->>>>>>> fc0c3f9a97ecddce3c17ee3121ce6c4b0a33b038:Assets/PF SET1/bakcground_night1.png.meta
+guid: 3c740e741f514ba42ad9030cd94085da
+>>>>>>> fc0c3f9a97ecddce3c17ee3121ce6c4b0a33b038:Assets/PF SET1/bakcground_day3.png.meta
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Light_Silhouette
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,16 +34,16 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
-    aniso: 16
+    filterMode: -1
+    aniso: 1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
-    wrapW: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -67,7 +70,7 @@ TextureImporter:
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

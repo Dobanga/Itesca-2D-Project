@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/PixelPack03_Free/BKG01.png.meta
-guid: 1f2cc40d32bb48444bd64699a8b55efb
-=======
-guid: 4b1df07ea00859b4886266878d9fda27
->>>>>>> fc0c3f9a97ecddce3c17ee3121ce6c4b0a33b038:Assets/PF SET1/bakcground_night1.png.meta
+guid: 41261f6ed984eb046a1828b6f367e7b9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -31,16 +27,16 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
-  maxTextureSize: 1024
+  textureFormat: 1
+  maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
-    aniso: 16
+    filterMode: -1
+    aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
-    wrapW: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -64,7 +60,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1

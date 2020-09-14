@@ -15,14 +15,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     ContactFilter2D groundFilter;
 
-    SpriteRenderer sp;
-
     Animator anim;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
-        sp = GetComponent<SpriteRenderer>();
         rb2D = GetComponent<Rigidbody2D>();
         gameInputs = new Inputs();
     }
@@ -45,13 +42,20 @@ public class Player : MonoBehaviour
     //cosas normales
     void Update()
     {
-        sp.flipX = FlipSpriteX;
+        if(IsMoving)
+            if(Axis.x > 0)
+                transform.localRotation = Quaternion.Euler(0,136,0);
+            
+            if(Axis.x < 0)
+                transform.localRotation = Quaternion.Euler(0, -136,0);
+            
     }
 
     //lo mismo que update pero se ejecuta despues de este
     void LateUpdate()
     {
         anim.SetFloat("move", Mathf.Abs(Axis.x));
+        anim.SetBool("Ground", IsGrounding);
     }
 
     //cosas de física
@@ -69,6 +73,7 @@ public class Player : MonoBehaviour
     {
         if (IsGrounding)
         {
+            anim.SetTrigger("Jump");
             rb2D.AddForce(JumpDir, ForceMode2D.Impulse);
         }
     }
@@ -79,7 +84,16 @@ public class Player : MonoBehaviour
 
     Vector2 Axis => gameInputs.Land.Move.ReadValue<Vector2>();
 
-    bool IsGrounding => rb2D.IsTouching(groundFilter);
+    /// <summary>
+    /// Check if player is moving with inputs H and V.
+    /// </summary>
+    bool IsMoving => AxisMagnitudeAbs > 0;
 
-    bool FlipSpriteX => Axis.x > 0 ? false : Axis.x < 0 ? true : sp.flipX;
+    /// <summary>
+    /// Returns the magnitude of the Axis with inputs H and V.
+    /// </summary>
+    /// <returns></returns>
+    float AxisMagnitudeAbs => Mathf.Abs(Axis.magnitude);
+
+    bool IsGrounding => rb2D.IsTouching(groundFilter);
 }
