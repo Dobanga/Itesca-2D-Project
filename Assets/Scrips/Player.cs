@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     ContactFilter2D groundFilter;
 
     Animator anim;
+    
+    [SerializeField]
+    GameObject Sonido;
 
     void Awake()
     {
@@ -73,7 +76,10 @@ public class Player : MonoBehaviour
     {
         if (IsGrounding)
         {
+
             anim.SetTrigger("Jump");
+
+            Instantiate(Sonido);
             rb2D.AddForce(JumpDir, ForceMode2D.Impulse);
         }
     }
