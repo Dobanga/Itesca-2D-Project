@@ -96,4 +96,5 @@ public class Player : MonoBehaviour
     float AxisMagnitudeAbs => Mathf.Abs(Axis.magnitude);
 
     bool IsGrounding => rb2D.IsTouching(groundFilter);
+
 }
