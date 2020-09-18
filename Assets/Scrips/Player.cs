@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     
     [SerializeField]
     GameObject Sonido;
+    [SerializeField]
+    GameObject gemAudio;
 
     [SerializeField]
     GameObject candado;
@@ -114,7 +116,7 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Gemas")){
-         
+            Instantiate(gemAudio);
             Destroy(other.gameObject);
         }
 

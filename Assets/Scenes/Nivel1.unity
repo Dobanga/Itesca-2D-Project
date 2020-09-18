@@ -8733,11 +8733,11 @@ RectTransform:
   m_Father: {fileID: 1702544685}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1245, y: -60}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -7.5, y: -32}
+  m_SizeDelta: {x: 170.53351, y: 50}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &328846139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8821,7 +8821,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 1.3393555, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10111,7 +10111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0985161, y: 0.9357761, z: -9.08}
+  m_LocalPosition: {x: 1.1187263, y: 0.9357761, z: -9.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11263,6 +11263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 527414731}
+  Sonido: {fileID: 7779774202306215739, guid: 7b333266eb3cdd949a6cb1e7cd0317d5, type: 3}
 --- !u!61 &753937183
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11916,7 +11917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050565398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0985161, y: 0.9357761, z: -9.08}
+  m_LocalPosition: {x: 1.1187263, y: 0.9357761, z: -9.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 961440579}
@@ -19575,6 +19576,10 @@ PrefabInstance:
       propertyPath: MensajeCondicion
       value: 
       objectReference: {fileID: 78683222}
+    - target: {fileID: 8305159932387514439, guid: b73da09859ab3b046999e5f485231e56, type: 3}
+      propertyPath: gemAudio
+      value: 
+      objectReference: {fileID: 7779774202306215739, guid: d5e79ab3e95f0e74db6328d246261422, type: 3}
     - target: {fileID: 8305159932387514440, guid: b73da09859ab3b046999e5f485231e56, type: 3}
       propertyPath: m_Mass
       value: 1
