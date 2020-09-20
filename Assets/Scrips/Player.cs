@@ -62,7 +62,8 @@ public class Player : MonoBehaviour
 
         if(Corazones.instance.VerCorazones()<0){
             print("Fin del juego");
-            SceneManager.LoadScene("Menu");
+           // SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("gameover");
 
         }
 
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
             Destroy(candado,1f);
             Destroy(MensajeCondicion);
             MC=true;
+            
         }
 
 
@@ -130,7 +132,8 @@ public class Player : MonoBehaviour
         }
 
         if(other.gameObject.CompareTag("GemaNivel")){//si toma la Gema para pasar de nivel
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("win");
+            //SceneManager.LoadScene("Menu");
             print("Pasa nivel");
 
         }
