@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rb2D;
 
     Inputs gameInputs;
+
+    bool movement = true;
 
     [SerializeField]
     ContactFilter2D groundFilter;
@@ -95,7 +98,10 @@ public class Player : MonoBehaviour
     //cosas de física
     void FixedUpdate()
     {
-        Movement();
+        if (movement)
+        {
+            Movement();
+        }
     }
 
     void Movement()
@@ -170,4 +176,15 @@ public class Player : MonoBehaviour
 
     bool IsGrounding => rb2D.IsTouching(groundFilter);
 
+    public void EnemyKnockBack(float enemyPosX)
+    {
+        float side = Mathf.Sign(enemyPosX - transform.position.x);
+        rb2D.AddForce(Vector2.left * side * jumpForce, ForceMode2D.Impulse);
+        movement = false;
+        Invoke("EnableMovement", 0.7f);
+    }
+    void EnableMovement()
+    {
+        movement = true;
+    }
 }
